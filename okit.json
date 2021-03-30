@@ -1,0 +1,233 @@
+{
+  "title": "Training_ENV",
+  "description": "# Description\n__Created 2021-3-30 14:59:46__\n\n--------------------------------------\n\n",
+  "created": "2021-3-30 14:59:46",
+  "updated": "2021-3-30 15:22:15",
+  "okit_version": "0.19.2",
+  "autonomous_databases": [],
+  "block_storage_volumes": [],
+  "compartments": [
+    {
+      "id": "okit.compartment.cf04b2ad-9f73-4386-839e-b05c3c5785f9",
+      "compartment_id": null,
+      "display_name": "DEV_Training_env",
+      "definition": "",
+      "freeform_tags": {},
+      "defined_tags": {},
+      "description": "DEV_Training_env"
+    }
+  ],
+  "customer_premise_equipments": [],
+  "database_systems": [],
+  "dynamic_routing_gateways": [],
+  "fast_connects": [],
+  "file_storage_systems": [],
+  "instances": [
+    {
+      "id": "okit.instance.45f6803a-758b-4aa8-af83-4847a78c4540",
+      "compartment_id": "okit.compartment.cf04b2ad-9f73-4386-839e-b05c3c5785f9",
+      "display_name": "Stu",
+      "definition": "",
+      "freeform_tags": {},
+      "defined_tags": {},
+      "availability_domain": "1",
+      "shape": "VM.Standard.E3.Flex",
+      "count": "8",
+      "fault_domain": "",
+      "agent_config": {
+        "is_monitoring_disabled": false,
+        "is_management_disabled": false
+      },
+      "vnics": [
+        {
+          "subnet_id": "okit.subnet.fa964b7c-767b-4dc3-90ee-8a67c720145b",
+          "assign_public_ip": true,
+          "nsg_ids": [],
+          "skip_source_dest_check": false,
+          "hostname_label": "okit-in0010"
+        }
+      ],
+      "source_details": {
+        "os": "Windows",
+        "version": "Server 2019 Standard",
+        "boot_volume_size_in_gbs": "50",
+        "source_type": "image"
+      },
+      "metadata": {
+        "ssh_authorized_keys": "",
+        "user_data": ""
+      },
+      "shape_config": {
+        "memory_in_gbs": "12",
+        "ocpus": 1
+      },
+      "block_storage_volume_ids": [],
+      "object_storage_bucket_ids": [],
+      "autonomous_database_ids": [],
+      "preserve_boot_volume": false,
+      "is_pv_encryption_in_transit_enabled": false,
+      "primary_vnic": {
+        "subnet_id": "okit.subnet.fa964b7c-767b-4dc3-90ee-8a67c720145b",
+        "assign_public_ip": true,
+        "nsg_ids": [],
+        "skip_source_dest_check": false,
+        "hostname_label": "okit-in0010"
+      }
+    }
+  ],
+  "instance_pools": [],
+  "internet_gateways": [
+    {
+      "id": "okit.internetgateway.34925ffe-936c-4e15-881c-1efb3bc3755c",
+      "compartment_id": "okit.compartment.cf04b2ad-9f73-4386-839e-b05c3c5785f9",
+      "display_name": "okit-ig001",
+      "definition": "",
+      "freeform_tags": {},
+      "defined_tags": {},
+      "vcn_id": "okit.virtualcloudnetwork.a2da6a1d-c26d-40c0-b870-01841dbc764f",
+      "enabled": true
+    }
+  ],
+  "ipsec_connections": [],
+  "load_balancers": [],
+  "local_peering_gateways": [],
+  "mysql_database_systems": [],
+  "nat_gateways": [],
+  "network_security_groups": [],
+  "object_storage_buckets": [],
+  "oke_clusters": [],
+  "remote_peering_connections": [],
+  "route_tables": [
+    {
+      "id": "okit.routetable.7bd8888c-0dcf-480f-8023-c781e4e8ab17",
+      "compartment_id": "okit.compartment.cf04b2ad-9f73-4386-839e-b05c3c5785f9",
+      "display_name": "okit-rt001",
+      "definition": "",
+      "freeform_tags": {},
+      "defined_tags": {},
+      "vcn_id": "okit.virtualcloudnetwork.a2da6a1d-c26d-40c0-b870-01841dbc764f",
+      "route_rules": [
+        {
+          "target_type": "internet_gateways",
+          "destination_type": "CIDR_BLOCK",
+          "destination": "0.0.0.0/0",
+          "network_entity_id": "okit.internetgateway.34925ffe-936c-4e15-881c-1efb3bc3755c",
+          "description": ""
+        }
+      ]
+    }
+  ],
+  "security_lists": [
+    {
+      "id": "okit.securitylist.34924f95-24c1-48f7-8e22-2ad5b4d158f2",
+      "compartment_id": "okit.compartment.cf04b2ad-9f73-4386-839e-b05c3c5785f9",
+      "display_name": "okit-sl001",
+      "definition": "",
+      "freeform_tags": {},
+      "defined_tags": {},
+      "vcn_id": "okit.virtualcloudnetwork.a2da6a1d-c26d-40c0-b870-01841dbc764f",
+      "egress_security_rules": [
+        {
+          "protocol": "all",
+          "is_stateless": false,
+          "description": "",
+          "destination_type": "CIDR_BLOCK",
+          "destination": "0.0.0.0/0",
+          "tcp_options": {
+            "source_port_range": {
+              "min": "",
+              "max": ""
+            },
+            "destination_port_range": {
+              "min": "",
+              "max": ""
+            }
+          },
+          "udp_options": {
+            "source_port_range": {
+              "min": "",
+              "max": ""
+            },
+            "destination_port_range": {
+              "min": "",
+              "max": ""
+            }
+          },
+          "icmp_options": {
+            "code": "",
+            "type": ""
+          }
+        }
+      ],
+      "ingress_security_rules": [
+        {
+          "protocol": "6",
+          "is_stateless": false,
+          "description": "Remote Desktop",
+          "source_type": "CIDR_BLOCK",
+          "source": "0.0.0.0/0",
+          "tcp_options": {
+            "source_port_range": {
+              "min": "",
+              "max": ""
+            },
+            "destination_port_range": {
+              "min": "3389",
+              "max": "3389"
+            }
+          },
+          "udp_options": {
+            "source_port_range": {
+              "min": "",
+              "max": ""
+            },
+            "destination_port_range": {
+              "min": "",
+              "max": ""
+            }
+          },
+          "icmp_options": {
+            "code": "",
+            "type": ""
+          }
+        }
+      ]
+    }
+  ],
+  "service_gateways": [],
+  "subnets": [
+    {
+      "id": "okit.subnet.fa964b7c-767b-4dc3-90ee-8a67c720145b",
+      "compartment_id": "okit.compartment.cf04b2ad-9f73-4386-839e-b05c3c5785f9",
+      "display_name": "sn001",
+      "definition": "",
+      "freeform_tags": {},
+      "defined_tags": {},
+      "vcn_id": "okit.virtualcloudnetwork.a2da6a1d-c26d-40c0-b870-01841dbc764f",
+      "cidr_block": "10.0.0.0/24",
+      "dns_label": "sn001",
+      "prohibit_public_ip_on_vnic": false,
+      "route_table_id": "okit.routetable.7bd8888c-0dcf-480f-8023-c781e4e8ab17",
+      "security_list_ids": [
+        "okit.securitylist.34924f95-24c1-48f7-8e22-2ad5b4d158f2"
+      ],
+      "availability_domain": "0",
+      "is_ipv6enabled": false,
+      "ipv6cidr_block": ""
+    }
+  ],
+  "virtual_cloud_networks": [
+    {
+      "id": "okit.virtualcloudnetwork.a2da6a1d-c26d-40c0-b870-01841dbc764f",
+      "compartment_id": "okit.compartment.cf04b2ad-9f73-4386-839e-b05c3c5785f9",
+      "display_name": "vcn",
+      "definition": "",
+      "freeform_tags": {},
+      "defined_tags": {},
+      "cidr_block": "10.0.0.0/16",
+      "dns_label": "vcn001",
+      "is_ipv6enabled": false,
+      "ipv6cidr_block": ""
+    }
+  ]
+}
